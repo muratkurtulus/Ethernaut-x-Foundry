@@ -3,6 +3,8 @@ pragma solidity ^0.6.0;
 
 import "@openzeppelin/contracts/math/SafeMath.sol";
 
+// For this challenge, our end goal is to be able to consecutively guess the coin flip result by calling the flip() function passing the correct guess.
+
 contract CoinFlip {
     using SafeMath for uint256;
     uint256 public consecutiveWins;

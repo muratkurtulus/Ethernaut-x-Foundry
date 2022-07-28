@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
+// The goal of this challenge is to claim ownership of the Fallout contract.
 
 import "@openzeppelin/contracts/math/SafeMath.sol";
 

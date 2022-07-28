@@ -43,8 +43,9 @@ contract TestFallout is BaseTest {
         // The result of this is that the contract was never initialized, the owner was the address(0)
         // and we were able to call the `Fal1out` function that at this point is not a constructor (callable only once)
         // but a "normal" function. This also mean that anyone can call multiple time this function switching the owner of the contract.
+        emit log_named_address("level owner", level.owner());
         level.Fal1out();
-
+        emit log_named_address("level owner", level.owner());
         vm.stopPrank();
     }
 }

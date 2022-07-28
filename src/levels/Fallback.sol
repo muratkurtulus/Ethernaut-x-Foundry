@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
+// The goal of this challenge is to claim ownership of the Fallback contract and reduce its balance to 0.
 import "@openzeppelin/contracts/math/SafeMath.sol";
 
 contract Fallback {

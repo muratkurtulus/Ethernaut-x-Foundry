@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
+// The goal of this level is for you to claim ownership of the instance you are given. Things that might help:
 contract Delegate {
     address public owner;
 

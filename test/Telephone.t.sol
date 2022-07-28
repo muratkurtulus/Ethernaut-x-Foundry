@@ -46,6 +46,7 @@ contract TestTelephone is BaseTest {
         // More info:
         // - https://consensys.github.io/smart-contract-best-practices/development-recommendations/solidity-specific/tx-origin/
         // - https://docs.soliditylang.org/en/develop/security-considerations.html#tx-origin
+        // emit log_named_address("tx.origin", tx.origin());
         exploiter.exploit(level);
 
         vm.stopPrank();

